@@ -2,27 +2,52 @@ Answer each question in a written format
 
 1. What does semantic HTML mean?
 
+Semantic HTML means that you use HTMl elements that are meaninful. An example of that would be if you were making a navigation bar, using the <nav> tag instead of a div, or using a <article> tag instead of a div. Utilize the meaningful elements that HTML5 provided for an easier to read codebase.
+
 2. What is the box model?
+
+The box model is based on the fact that web pages are basically made up of boxes, or squares. Every element that you place on the DOM has the space its content takes up, the "padding" which is the space between the content and the border, the "border" which takes up space between the padding and the margin, and the "margin" which takes up the space between an element and its surrounding elements. These characteristics make up the box model, and control how to elements on the DOM position themselves.
 
 3. What is the difference between IDs and Classes?
 
+The difference between IDs and Classes is that ID are specific to one element and can not be reused. Classes can be used on multiple elements. So if you need to style several elements the same way, use the class designation so you can place the same style on multiple elements.
+
 4. What does the z-index do?
+
+The z-index controls specificity for what is to be shown on a webpage. For example; if you a a fixed navbar that disappears underneath another element, you can set a z-index to a higher number, I typically use around z-index: 12, and this will bring the element towards the top level of the DOM to make it appear. You can also use it in the opposite manner, if you would like an element to show up underneat another element, give it a negative z-index.
 
 5. Summarize what the keyword 'this' is used for?
 
+The keyword "this" is used for context in javascript. It is used to signify what you are currently referencing. Through different methods your are able to provide that context to this, or "this" can implicitly see what it's context should be.
+
 6. What is a callback?
+
+A callback is a function that is passed to another function as an argument. This allows you to keep your functions very dynamic and be able to use the same function with different callbacks depending on what type of user input you receive. 
 
 7. What is a closure?
 
+A closure is a functional programming paradigm that creates private variables, not directly accessible, or mutable. Closures at the minimum are functions that return functions.
+
 8. How does prototype work?
+
+A prototype is something that every Javascript element has. It stores all of that elements methods. For example: array.push is stored on the Array prototype. Knowing this information you can then alter these methods, or add methods. This comes in handy when creating constructor functions, as you can add a method on to the function so that the children functions created from it, can access the methods when needed, but not take up memory space if they do not.
 
 9. What is MVC?
 
+MVC stands for Model, View, Controller.
+The views is what you see on your screen. The Model is what handles all of the major computing and handles the heavy lifting of the application. The controller is what passes the information from the view to the model. This allows the Model and view to be seperated sections and not interact. 
+
 10. What is the component lifecycle?
+
+Component lifecycle is what controls the updates of DOM nodes in React. It determines when the view is updated, and changed based off of what is ocurring in the application. Examples of this are componentDidMount, ComponentShouldUpdate, componentDidUnmount. These lifecycle hooks can be utilitzed to make things happen at specific times of the lifecycle. An example of this would be that you typically make http requests during the componentDidMount lifecycle to allow for speedy loading of your pages.
 
 11. What is REST?
 
+REST stands for Respresentational State Transfer and is a protocol for HTTP requests utilizing the CRUD(create, read, update, and delete) methods. REST sets the standard for how this should be accomplished, and the best practices.
+
 12. Name three ways of getting data from the URL using express
+
+Three ways of getting data from a url is from req.body, req.params, and req.query.
 
 create table users (
 id serial,
@@ -32,10 +57,10 @@ email varchar(255)
 
 12. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
--Get all users:
+-Get all users: SELECT * FROM users;
 
--Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+-Create a new user with the name of 'your name' and an email of 'fake@fake.com': INSERT INTO user (name, email) VALUES ('Bryce Hull', 'bahull@live.com')
 
--Update the newly created user's name to 'Bobby Boy':
+-Update the newly created user's name to 'Bobby Boy': UPDATE users SET name = 'Bobby Boy' WHERE name = 'Bryce Hull'
 
--Delete the newly updated user:
+-Delete the newly updated user: DELETE * WHERE name = 'Bobby Boy'
